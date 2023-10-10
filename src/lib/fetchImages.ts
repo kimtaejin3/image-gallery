@@ -17,9 +17,6 @@ export default async function fetchImages(
     }
 
     const imaegsResults = await res.json();
-    console.log("==");
-    console.log(imaegsResults);
-    console.log("==");
     //parse data with zod schema
     const parsedData = ImagesSchemaWithPhotos.parse(imaegsResults);
 

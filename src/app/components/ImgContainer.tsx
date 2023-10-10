@@ -7,8 +7,19 @@ type Props = {
 
 export default function ImgContainer({ photo }: Props) {
   return (
-    <div key={photo.id} className=" bg-gray-200 rounded-xl overflow-hidden">
-      <Image width={250} height={250} src={photo.src.large} alt={photo.alt} />
+    <div
+      key={photo.id}
+      className=" h-64 bg-gray-200 rounded-xl overflow-hidden relative hover:opacity-70"
+    >
+      <Image
+        className="object-cover"
+        fill={true}
+        src={photo.src.large}
+        alt={photo.alt}
+        sizes="(max-width: 538px) 50vw"
+        placeholder="blur"
+        blurDataURL={photo.blurredDataUrl}
+      />
     </div>
   );
 }
